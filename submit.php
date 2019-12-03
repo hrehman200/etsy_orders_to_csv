@@ -58,7 +58,7 @@ was_shipped	N	 	boolean
 
             $arr_csv[] = [
                 date('Y-m-d', $receipt->creation_tsz),
-                $receipt->order_id,
+                $receipt->receipt_id,
                 $receipt->name,
                 $receipt->first_line,
                 $receipt->second_line,
@@ -79,5 +79,5 @@ was_shipped	N	 	boolean
         }
     }
 
-    array_to_csv_download($arr_csv, 'etsy_orders'.date('d-m-Y').'.csv');
+    array_to_csv_download($arr_csv, 'etsy_'.date('d-m-Y').'.csv');
 }
