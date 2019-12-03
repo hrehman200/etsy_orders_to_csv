@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "dc14276a6cd34c3b571953b59f8e3ab3",
+    "packages": [
+        {
+            "name": "inakiabt/etsy-php",
+            "version": "0.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inakiabt/etsy-php.git",
+                "reference": "26fc67edc228c726f82b99a2af158d8feef513b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inakiabt/etsy-php/zipball/26fc67edc228c726f82b99a2af158d8feef513b0",
+                "reference": "26fc67edc228c726f82b99a2af158d8feef513b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/php-code-coverage": "6.0.7",
+                "phpunit/php-invoker": ">=2.0.0",
+                "phpunit/phpunit": "7.3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Etsy\\": "src/Etsy/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iñaki Abete"
+                }
+            ],
+            "description": "Simple PHP wrapper for Etsy API",
+            "time": "2018-10-05T20:39:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

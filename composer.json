@@ -1,0 +1,5 @@
+{
+  "require": {
+    "inakiabt/etsy-php": ">=0.10"
+  }
+}
