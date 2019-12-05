@@ -71,8 +71,8 @@ was_shipped	N	 	boolean
                 $transaction->product_data->sku,
                 $transaction->quantity,
                 $transaction->price . $transaction->currency_code,
-                $receipt->message_from_buyer,
-                count($custom_msg) > 0 ? $custom_msg[0]->formatted_value : '',
+                str_replace(array("\n","\r"), ' ', $receipt->message_from_buyer),
+                count($custom_msg) > 0 ? str_replace(array("\n","\r"), ' ', $custom_msg[0]->formatted_value) : '',
                 $receipt->was_paid,
                 $receipt->was_shipped
             ];
