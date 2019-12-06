@@ -4,7 +4,7 @@ define('ETSY_API_KEY', '');
 define('ETSY_SECRET', '');
 define('ETSY_API_URL', 'https://openapi.etsy.com/v2/');
 
-function array_to_csv_download($array, $filename = "export.csv", $delimiter=";") {
+function array_to_csv_download($array, $filename = "export.csv", $delimiter=",") {
     header('Content-Type: application/csv');
     header('Content-Disposition: attachment; filename="'.$filename.'";');
 
@@ -13,7 +13,7 @@ function array_to_csv_download($array, $filename = "export.csv", $delimiter=";")
     $f = fopen('php://output', 'w');
 
     foreach ($array as $line) {
-        fputcsv($f, $line);
+        fputcsv($f, $line, $delimiter);
     }
 
     fclose($f);
