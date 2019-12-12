@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 set_time_limit(0);
-error_reporting(E_ALL);
+error_reporting(E_ERROR);
 
 function recursiveFind(array $haystack, $needle) {
     $iterator = new RecursiveArrayIterator($haystack);
@@ -62,7 +62,10 @@ if (isset($_FILES['csvFile'])) {
                         continue;
 
                     $arr_areas = recursiveFind($arr_personalization['customizationInfo'], "areas");
-                    $row[26] = $arr_areas[0]['text'] . " " . $arr_areas[1]['text'];
+                    $row[26] = $arr_areas[0]['text'];
+                    if(strlen($arr_areas[1]['text'])) {
+                        $row[26] .= "-" . $arr_areas[1]['text'];
+                    }
 
                     unlink('uploads/' . $zip->getNameIndex($j));
                 } else {
@@ -78,5 +81,5 @@ if (isset($_FILES['csvFile'])) {
         $i++;
     }
 
-    array_to_csv_download($arr_csv, 'amazon_' . date('d-m-Y') . '.csv', "\t");
+    array_to_csv_download($arr_csv, 'amazon_' . date('d-m-Y') . '.txt', "\t");
 }
